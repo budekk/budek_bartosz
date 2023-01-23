@@ -1,7 +1,7 @@
 import ifcopenshell.util.element
 import pprint as pp
 
-m = ifcopenshell.open("Duplex_A.ifc")
+m = ifcopenshell.open("231110AC-11-Smiley-West-04-07-2007.ifc")
 walls = m.by_type("IfcWall")
 print(len(walls))
 
@@ -15,7 +15,7 @@ for w in walls:
         if bool(psets.get("Pset_WallCommon").get("IsExternal")):
             ext_walls.append(w)
             
-print(f'Liczba ścian zewnętrznych: {len(ext_walls)}')
+print(f'sciany zewnetrzne: {len(ext_walls)}')
 
 totalvolume = 0
 
@@ -28,5 +28,4 @@ for w in ext_walls:
                 totalvolume += float(value)
 print(f'TotalVolume: {totalvolume:.2f}')
 
-#231110AC-11-Smiley-West-04-07-2007.ifc
 
